@@ -14,9 +14,9 @@ steps:
     echo $(System.DefaultWorkingDirectory)
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '/src/main/webapp/'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/src/main/webapp/'
     Contents: '**'
-    TargetFolder: '/src'
+    TargetFolder: '$(System.DefaultWorkingDirectory)/src'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
